@@ -17,6 +17,12 @@ def quantity():
 
 files = get_files(input_dir)
 
+try:
+	os.mkdir(os.path.join(output_dir))
+except Exception as e:
+	None
+       #, mode=0o777, *, dir_fd=None)
+
 while files:
 	pipes = []
 	for i in range(quantity()):
