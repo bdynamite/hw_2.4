@@ -15,13 +15,15 @@ def quantity():
 	else:
 		return len(files) 
 
+def check_output_dir():
+	try:
+		os.mkdir(os.path.join(output_dir))
+	except Exception as e:
+		None	
+
 files = get_files(input_dir)
 
-try:
-	os.mkdir(os.path.join(output_dir))
-except Exception as e:
-	None
-       #, mode=0o777, *, dir_fd=None)
+check_output_dir()
 
 while files:
 	pipes = []
